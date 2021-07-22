@@ -1,14 +1,14 @@
 #!/bin/perl
 
-# ‡•¶®¨ ™‡ÆØ†, •·´® §†, ‚Æ ‚Æ´Ï™Æ "™‡ÆØ†•¨" ·„È•·‚¢„ÓÈ®• xmp
-my $iscrop=0; # ≠• ™‡ÆØ ‡•¶®¨ ØÆ „¨Æ´Á†≠®Ó
+# —Ä–µ–∂–∏–º –∫—Ä–æ–ø–∞, –µ—Å–ª–∏ –¥–∞, —Ç–æ —Ç–æ–ª—å–∫–æ "–∫—Ä–æ–ø–∞–µ–º" —Å—É—â–µ—Å—Ç–≤—É—é—â–∏–µ xmp
+my $iscrop=0; # –Ω–µ –∫—Ä–æ–ø —Ä–µ–∂–∏–º –ø–æ —É–º–æ–ª—á–∞–Ω–∏—é
 
 
 my ($oneXMP, $twoXMP, $crop) = @ARGV;
 
 $iscrop=1 if ($crop eq'crop');
 
-print "ä‡ÆØ ‡•¶®¨!!!\n" if ($iscrop);
+print "–ö—Ä–æ–ø —Ä–µ–∂–∏–º!!!\n" if ($iscrop);
 
 my   $oneHead=0;
 my   $oneNum =0;
@@ -58,13 +58,13 @@ my $TwoCropLeft      =0;
 my $TwoCropBottom    =1;
 my $TwoCropRight     =1;
 
-#ó®‚†•¨ Ø•‡¢Î© ‰†©´ 
+#–ß–∏—Ç–∞–µ–º –ø–µ—Ä–≤—ã–π —Ñ–∞–π–ª 
 if ((not defined $oneXMP) or (not defined $twoXMP))  {
   die "xmp.pl 1.xmp 2.xmp [crop]\n";
 }
 
 open(my $one, '<', $oneXMP) or die "Unable to open file, $!";
-print "‰†©´:  $oneXMP\n";
+print "—Ñ–∞–π–ª:  $oneXMP\n";
 
 
 while (<$one>) { 
@@ -94,17 +94,17 @@ while (<$one>) {
 close($one) or warn "Unable to close the file handle: $!";
 
 
- print "Å†´†≠· °•´Æ£Æ:  $OneWhiteBalance\n";
- print "ñ¢.‚•¨Ø•‡†‚„‡†: $OneTemperature\n";
- print "ñ¢•‚Æ¢Æ© ‚Æ≠:   $OneTint\n";
- print "ç†·ÎÈ•≠≠Æ·‚Ï:   $OneVibrance\n";
- print "ù™·ØÆß®Ê®Ô:     $OneExposure2012\n";
- print "äÆ≠‚‡†·‚:       $OneContrast2012\n";
- print "ë¢•‚†:          $OneHighlights2012\n";
- print "í•≠®:           $OneShadows2012\n";
- print "Å•´Î©:          $OneWhites2012\n";
- print "ó•‡≠Î©:         $OneBlacks2012\n";
- print "å®™‡Æ™Æ≠‚‡†·‚:  $OneClarity2012\n";
+ print "–ë–∞–ª–∞–Ω—Å –±–µ–ª–æ–≥–æ:  $OneWhiteBalance\n";
+ print "–¶–≤.—Ç–µ–º–ø–µ—Ä–∞—Ç—É—Ä–∞: $OneTemperature\n";
+ print "–¶–≤–µ—Ç–æ–≤–æ–π —Ç–æ–Ω:   $OneTint\n";
+ print "–ù–∞—Å—ã—â–µ–Ω–Ω–æ—Å—Ç—å:   $OneVibrance\n";
+ print "–≠–∫—Å–ø–æ–∑–∏—Ü–∏—è:     $OneExposure2012\n";
+ print "–ö–æ–Ω—Ç—Ä–∞—Å—Ç:       $OneContrast2012\n";
+ print "–°–≤–µ—Ç–∞:          $OneHighlights2012\n";
+ print "–¢–µ–Ω–∏:           $OneShadows2012\n";
+ print "–ë–µ–ª—ã–π:          $OneWhites2012\n";
+ print "–ß–µ—Ä–Ω—ã–π:         $OneBlacks2012\n";
+ print "–ú–∏–∫—Ä–æ–∫–æ–Ω—Ç—Ä–∞—Å—Ç:  $OneClarity2012\n";
  print "Dehaze:         $OneDehaze\n";
 
  print "OneCropTop            $OneCropTop   \n";
@@ -115,14 +115,14 @@ close($one) or warn "Unable to close the file handle: $!";
 
  print "\n===\n";
 
-#ó®‚†•¨ Ç‚Æ‡Æ© ‰†©´ 
+#–ß–∏—Ç–∞–µ–º –í—Ç–æ—Ä–æ–π —Ñ–∞–π–ª 
 
 open(my $two, '<', $twoXMP) or die "Unable to open file, $!";
-print "‰†©´:  $twoXMP\n";
+print "—Ñ–∞–π–ª:  $twoXMP\n";
 
 
 while (<$two>) { 
-   print "Å†´†≠· °•´Æ£Æ $1\n" if (/\S*crs:WhiteBalance=\"([^\"]+)\"/);
+   print "–ë–∞–ª–∞–Ω—Å –±–µ–ª–æ–≥–æ $1\n" if (/\S*crs:WhiteBalance=\"([^\"]+)\"/);
 
    $TwoTemperature    =$1 if (/\S*crs:Temperature=\"([^\"]+)\"/);
    $TwoTint           =$1 if (/\S*crs:Tint=\"([^\"]+)\"/);
@@ -145,23 +145,23 @@ while (<$two>) {
 close($two) or warn "Unable to close the file handle: $!";
 
 
- print "ñ¢.‚•¨Ø•‡†‚„‡†: $TwoTemperature\n";
- print "ñ¢•‚Æ¢Æ© ‚Æ≠:   $TwoTint\n";
- print "ç†·ÎÈ•≠≠Æ·‚Ï:   $TwoVibrance\n";
- print "ù™·ØÆß®Ê®Ô:     $TwoExposure2012\n";
- print "äÆ≠‚‡†·‚:       $TwoContrast2012\n";
- print "ë¢•‚†:          $TwoHighlights2012\n";
- print "í•≠®:           $TwoShadows2012\n";
- print "Å•´Î©:          $TwoWhites2012\n";
- print "ó•‡≠Î©:         $TwoBlacks2012\n";
- print "å®™‡Æ™Æ≠‚‡†·‚:  $TwoClarity2012\n";
+ print "–¶–≤.—Ç–µ–º–ø–µ—Ä–∞—Ç—É—Ä–∞: $TwoTemperature\n";
+ print "–¶–≤–µ—Ç–æ–≤–æ–π —Ç–æ–Ω:   $TwoTint\n";
+ print "–ù–∞—Å—ã—â–µ–Ω–Ω–æ—Å—Ç—å:   $TwoVibrance\n";
+ print "–≠–∫—Å–ø–æ–∑–∏—Ü–∏—è:     $TwoExposure2012\n";
+ print "–ö–æ–Ω—Ç—Ä–∞—Å—Ç:       $TwoContrast2012\n";
+ print "–°–≤–µ—Ç–∞:          $TwoHighlights2012\n";
+ print "–¢–µ–Ω–∏:           $TwoShadows2012\n";
+ print "–ë–µ–ª—ã–π:          $TwoWhites2012\n";
+ print "–ß–µ—Ä–Ω—ã–π:         $TwoBlacks2012\n";
+ print "–ú–∏–∫—Ä–æ–∫–æ–Ω—Ç—Ä–∞—Å—Ç:  $TwoClarity2012\n";
  print "Dehaze:         $TwoDehaze\n";
  print "CropTop            $TwoCropTop   \n";
  print "CropLeft           $TwoCropLeft  \n";
  print "CropBottom         $TwoCropBottom\n";
  print "CropRight          $TwoCropRight \n";
 
- print "\n===ê†ß≠®Ê†\n";
+ print "\n===–†–∞–∑–Ω–∏—Ü–∞\n";
 
 
 my $diffTemperature   = $OneTemperature   -$TwoTemperature   ;
@@ -181,16 +181,16 @@ my $diffCropLeft       = $OneCropLeft      -$TwoCropLeft      ;
 my $diffCropBottom     = $OneCropBottom    -$TwoCropBottom    ;
 my $diffCropRight      = $OneCropRight     -$TwoCropRight     ;
 
- print "ñ¢.‚•¨Ø•‡†‚„‡†: $diffTemperature \n";
- print "ñ¢•‚Æ¢Æ© ‚Æ≠:   $diffTint        \n";
- print "ç†·ÎÈ•≠≠Æ·‚Ï:   $diffVibrance    \n";
- print "ù™·ØÆß®Ê®Ô:     $diffExposure2012\n";
- print "äÆ≠‚‡†·‚:       $diffContrast2012\n";
- print "ë¢•‚†:          $diffHighlights2012\n";
- print "í•≠®:           $diffShadows2012 \n";
- print "Å•´Î©:          $diffWhites2012  \n";
- print "ó•‡≠Î©:         $diffBlacks2012  \n";
- print "å®™‡Æ™Æ≠‚‡†·‚:  $diffClarity2012 \n";
+ print "–¶–≤.—Ç–µ–º–ø–µ—Ä–∞—Ç—É—Ä–∞: $diffTemperature \n";
+ print "–¶–≤–µ—Ç–æ–≤–æ–π —Ç–æ–Ω:   $diffTint        \n";
+ print "–ù–∞—Å—ã—â–µ–Ω–Ω–æ—Å—Ç—å:   $diffVibrance    \n";
+ print "–≠–∫—Å–ø–æ–∑–∏—Ü–∏—è:     $diffExposure2012\n";
+ print "–ö–æ–Ω—Ç—Ä–∞—Å—Ç:       $diffContrast2012\n";
+ print "–°–≤–µ—Ç–∞:          $diffHighlights2012\n";
+ print "–¢–µ–Ω–∏:           $diffShadows2012 \n";
+ print "–ë–µ–ª—ã–π:          $diffWhites2012  \n";
+ print "–ß–µ—Ä–Ω—ã–π:         $diffBlacks2012  \n";
+ print "–ú–∏–∫—Ä–æ–∫–æ–Ω—Ç—Ä–∞—Å—Ç:  $diffClarity2012 \n";
  print "Dehaze:         $diffDehaze      \n";
 
  print "CropTop            $diffCropTop         \n";
@@ -280,4 +280,3 @@ if (!$iscrop) {
   rename $fileName.'.tmp', $fileName if ($iscrop);
 
 }
-
