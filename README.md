@@ -56,12 +56,3 @@ In crop mode also calculated:
 CropTop, CropLeft, CropBottom, CropRight
 
 ### please help me translate readme to english ))
-When shooting timelapse, very often it becomes necessary to adjust the exposure parameters. For example, when shooting long timelapse with day-night transition. This perl script is written on the knee to simplify the process raw images. When changing the exposure, a luminance "step" inevitably appears in the final video. The script creates intermediate files from two base xmp files in which it smoothly changes exposure parameters, white balance and a number of other parameters affecting the final image. Thus, the process of calculating and automatically creating xmp files for processing images in the Adobe Camera raw converter is automated.
-
-AutoCalculated parameters:
-
-WhiteBalance, Temperature, Tint, Vibrance, Exposure2012, Contrast2012, Highlights2012, Shadows2012, Whites2012, Blacks2012, Clarity2012, Dehaze
-
-In crop mode also calculated:
-
-CropTop, CropLeft, CropBottom, CropRight
